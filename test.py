@@ -11,6 +11,10 @@ class TravisTestCase(unittest.TestCase):
         rv = self.app.get('/')
         assert b'Hello world' in rv.data
 
+    def test_nonexistant_endpoint(self):
+        rv = self.app.get('/butt')
+        assert rv.status_code is not 200
+
     def test_failing_test(self):
         rv = self.app.get('/butt')
         assert b'Hello world' not in rv.data
