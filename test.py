@@ -7,8 +7,12 @@ class TravisTestCase(unittest.TestCase):
         travistest.app.config['TESTING'] = True
         self.app = travistest.app.test_client()
     
-    def test_hello_world(self):
+    def test_index(self):
         rv = self.app.get('/')
+        assert b'Hello world' in rv.data
+
+    def test_failing_test(self):
+        rv = self.app.get('/butt')
         assert b'Hello world' in rv.data
 
 if __name__ == '__main__':
