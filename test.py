@@ -13,7 +13,7 @@ class TravisTestCase(unittest.TestCase):
 
     def test_nonexistant_endpoint(self):
         rv = self.app.get('/butt')
-        assert rv.status_code is not 200
+        assert rv.status_code > 200
 
     def test_failing_test(self):
         rv = self.app.get('/butt')
