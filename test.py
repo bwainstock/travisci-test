@@ -13,7 +13,7 @@ class TravisTestCase(unittest.TestCase):
 
     def test_failing_test(self):
         rv = self.app.get('/butt')
-        assert b'Hello world' in rv.data
+        assert b'Hello world' not in rv.data
 
 if __name__ == '__main__':
     unittest.main()    
