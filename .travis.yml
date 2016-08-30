@@ -14,4 +14,4 @@ deploy:
   access_key_id: "AKIAID4OY7CSRFAZBOQA"
   secret_access_key: "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"
 on:
-  all_branches: true 
+  branch: lambda
